@@ -1,0 +1,102 @@
+<mvc:View controllerName="ZC16.project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:blockcolor="sap.uxap.sample.SharedBlocks"
+    height="100%">
+
+    
+
+
+
+	<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageHeader objectTitle="용품재고확인">
+                
+                <actions>
+              
+                    
+                </actions>
+			</ObjectPageHeader>
+		</headerTitle>
+
+		<headerContent>
+			<m:ObjectAttribute title="" text="This example explains the rules for the rendering of sections"/>
+		</headerContent>
+
+		<sections>
+
+
+			<ObjectPageSection titleUppercase="false" title="용품재고">
+                
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<blocks>
+                         <m:Toolbar>
+				         <m:SearchField width="40%" style="Clear" />
+			             </m:Toolbar> 
+                          <!--<m:Text text= "sap.m.text" />-->
+
+                            <m:Table id="idProductsTable"
+                                    inset="false"
+                                    sticky="ColumnHeaders"
+                                    items="{/ZZ1_MA_STOCK1}" 
+                                    mode="SingleSelectMaster"
+                                    selectionChange="selectionChange">
+                                <m:headerToolbar>
+                                    <m:OverflowToolbar>
+                                        <m:content>
+                                            <m:Title text=" " level="H2"/>
+                                            <m:ToolbarSpacer />
+                                        </m:content>
+                                    </m:OverflowToolbar>
+                                </m:headerToolbar>
+                                <m:columns>
+                                    <m:Column width="12em">
+                                        <m:Text text="용품자재코드" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="저장위치코드" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="조직코드" />
+                                    </m:Column>
+                                      <m:Column width="12em">
+                                        <m:Text text="총수량" />
+                                    </m:Column>
+                                      <m:Column width="12em">
+                                        <m:Text text="대여가능수량" />
+                                    </m:Column>
+                                      <m:Column width="12em">
+                                        <m:Text text="대여중수량" />
+                                    </m:Column>
+                                </m:columns>
+                                <m:items>
+                                    <m:ColumnListItem vAlign="Middle">
+                                        <m:cells>
+                                            <m:Text text="{Gstcode}" />
+                                            <m:Text text="{Stcode}" />
+                                            <m:Text text="{Vkorg}" />
+                                            <m:Text text="{Gtquan}" />
+                                            <m:Text text="{Gpquan}" />
+                                            <m:Text text="{Goquan}" />
+                                              
+
+                                        </m:cells>
+                                    </m:ColumnListItem>
+                                </m:items>
+                            </m:Table>
+
+                              </blocks>
+                        </ObjectPageSubSection>
+                    </subSections>
+            </ObjectPageSection>
+
+            
+
+
+                        </sections>
+
+                        </ObjectPageLayout>
+                        </mvc:View>
